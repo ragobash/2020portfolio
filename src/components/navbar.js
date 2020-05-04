@@ -1,38 +1,45 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { Typography } from '@material-ui/core';
+
+import '../App.css';
 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
   },
+  toolbar: {
+    alignSelf: 'flex-end',
+  },
+  navTab: {
+    fontFamily: 'Exo, sans-serif',
+    fontWeight: 'bold',
+    margin: '10px',
+    color: 'black',
+    textDecorationLine: 'underline',   
+  },
 });
 
 export default function Navbar() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   return (
-    <Paper className={classes.root}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        centered
+    <div className={classes.root}>
+      <AppBar
+        position='sticky'
+        color= 'default'
       >
-        <Tab label="Home" />
-        <Tab label="About" />
-        <Tab label="Resume" />
-        <Tab label="Works" />
-        <Tab label="Contact" />
-      </Tabs>
-    </Paper>
+        <Toolbar className={classes.toolbar}>
+        <AnchorLink href='#landingPage'><Typography className={classes.navTab} variant='body1'>home</Typography></AnchorLink>
+        <AnchorLink href='#about'><Typography className={classes.navTab} variant='body1'>about</Typography></AnchorLink>
+        <AnchorLink href='#resume'><Typography className={classes.navTab} variant='body1'>resume</Typography></AnchorLink>
+        <AnchorLink href='#works'><Typography className={classes.navTab} variant='body1'>works</Typography></AnchorLink>
+        <AnchorLink href='#contact'><Typography className={classes.navTab} variant='body1'>contact</Typography></AnchorLink>
+        </Toolbar>
+        </AppBar>
+        </div>
   );
 }

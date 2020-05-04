@@ -34,21 +34,55 @@ const useStyles = makeStyles(() => ({
     color: 'black',
   },
   title: {
-    fontWeight: 'bold',
-    padding: '15px',
-  },
-  aboutInfoTitle: {
     fontFamily: 'Vollkorn SC, serif',
     fontWeight: 'bold',
     padding: '15px',
+  },
+  titleWhite: {
+    fontFamily: 'Vollkorn SC, serif',
+    fontWeight: 'bold',
+    padding: '15px',
+    color: 'white',
+  },
+  aboutInfoTitle: {
+    fontFamily: 'Exo, sans-serif',
+    fontWeight: 'bold',
+    padding: '15px',
     textAlign: 'left'
-
   },
   aboutInfo: {
     fontFamily: 'Exo, sans-serif',
     margin: '15px',
     textAlign: 'left'
-  }
+  },
+  timelineTitleLeft: {
+    fontFamily: 'Vollkorn SC, serif',
+    fontWeight: 'bold',
+    textAlign: 'right',
+  },
+  timelineSubtitleLeft: {
+    fontFamily: 'Exo, sans-serif',
+    fontWeight: 'bold',
+    textAlign: 'right',
+  },
+  timelineInfoLeft: {
+    fontFamily: 'Exo, sans-serif',
+    textAlign: 'right',
+  },
+  timelineTitleRight: {
+    fontFamily: 'Vollkorn SC, serif',
+    fontWeight: 'bold',
+    textAlign: 'left',
+  },
+  timelineSubtitleRight: {
+    fontFamily: 'Exo, sans-serif',
+    fontWeight: 'bold',
+    textAlign: 'left',
+  },
+  timelineInfoRight: {
+    fontFamily: 'Exo, sans-serif',
+    textAlign: 'left',
+  },
 }))
 
 
@@ -58,7 +92,9 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='landingPage'>
+{/* ------------------------------------------------------------------------------------------------ */}
+      {/* LANDING PAGE */}
+      <div className='landingPage' id='landingPage'>
       <LazyHero
         color='#000000'
         imageSrc='https://picsum.photos/id/180/2400/1600.jpg?grayscale&blur=10'
@@ -90,8 +126,8 @@ function App() {
             self-awareness.
             </Typography>
             <div className={classes.icons}>
-            <a href='https://www.linkedin.com/in/ryanharrishtx/' target='_blank'><i class='fab fa-linkedin fa-4x' style={{padding: '5px', color: 'white'}}></i></a>
-            <a href='https://github.com/ragobash' target='_blank'><i class='fab fa-github-square fa-4x' style={{padding: '5px', color: 'white'}}></i></a>
+            <a href='https://www.linkedin.com/in/ryanharrishtx/' target='_blank' rel='noopener noreferrer'><i class='fab fa-linkedin fa-4x' style={{padding: '5px', color: 'white'}}></i></a>
+            <a href='https://github.com/ragobash' target='_blank' rel='noopener noreferrer'><i class='fab fa-github-square fa-4x' style={{padding: '5px', color: 'white'}}></i></a>
             </div>
             <div class="scroll-downs">
               <div class="mousey">
@@ -103,7 +139,7 @@ function App() {
       </div>
 {/* ------------------------------------------------------------------------------------------------ */}
       {/* ABOUT SECTION */}
-      <div className={classes.newSection}>
+      <div className={classes.newSection} id='about'>
         <Navbar />
           <Typography className={classes.title} variant="h1">
             ABOUT ME
@@ -117,12 +153,12 @@ function App() {
             <Grid item lg={1}></Grid>
             <Grid item xs={12} lg={6}>
               <Paper elevation={0} style={{margin: '5px 0px 25px 15px'}}>
-                <Typography className={classes.aboutInfoTitle} variant="h4" style={{justify: 'left'}}>Objective</Typography>
+                <Typography className={classes.aboutInfoTitle} variant="h4" style={{justify: 'left'}}>OBJECTIVE</Typography>
                 <Typography className={classes.aboutInfo} variant="body1">I am an enthusiastic entrepreneur and developer eager to turn my passion for web design into a career at an awesome company. <br />
                 As a creative Full Stack Developer and Designer, I am adept at working with all aspects of technology and information systems, with expertise in full project lifecycle development with a focus on delivering business solutions to technology needs. I am a detail-oriented web developer with extensive experience in design, bug-fixing and customer service, and troubleshoot highly technical issues with ease and patience.</Typography>
                 </Paper>
                 <Paper elevation={0} style={{margin: '5px 0px 25px 15px'}}>
-                <Typography className={classes.aboutInfoTitle} variant="h4">What I Do</Typography>
+                <Typography className={classes.aboutInfoTitle} variant="h4">WHAT I DO</Typography>
                 <Typography className={classes.aboutInfo} variant="body1">Work closely with clients to create vision, conceive designs, and consistently meet deadlines and requirements.
                 <br />
                 Conceptualize, plan, and execute original designs for a wide range of website properties, including website responsiveness.
@@ -160,14 +196,84 @@ function App() {
             </Grid>
             <Grid item={1}></Grid>
             </Grid>
-            <hr style={{margin:'25px 0px 25px 0px'}}></hr>
       </div>
+
 {/* ------------------------------------------------------------------------------------------------ */}
-    {/* ABOUT SECTION */}
-    <div className={classes.newSection}>
+      {/* RESUME SECTION */}
+    <div className={classes.newSection} id='resume' style={{backgroundColor: '#222222'}}>
+      <Typography className={classes.titleWhite} variant="h1">
+        RESUME
+      </Typography>
+    <div className="timeline-wrap">
+      <ul className="timeline timeline--first">
+          <li className="era">
+            <Typography variant='h4' className="era__title">Education</Typography>
+          </li>
+          <li className="entry entry--left">
+            <div className="entry__content">
+                <Typography variant='h4' className={classes.timelineTitleLeft}>CERTIFICATE</Typography>
+                <Typography variant='subtitle1' className={classes.timelineSubtitleLeft}>Full Stack Developer Certificate, University of Texas at Austin, Houston, TX</Typography>
+                <Typography variant='subtitle2' className={classes.timelineSubtitleLeft}>2019</Typography>
+                <Typography variant='body2' className={classes.timelineInfoLeft}>24 week course in Web Development which included HTML, Git, CSS, Javascript, jQuery, APIs, AJAX, JSON, Firebase, Node JS, MYSQL, Heroku, Express, Handlebars, Sequelize ORM, MongoDB, MongoJS, Mongoose, ES6, React JS, JSX, and MERN.</Typography>
+            </div>
+          </li>
+          <li className="entry entry--right">
+          <div className="entry__content">
+                <Typography variant='h4' className={classes.timelineTitleRight}>BACHELOR OF FINE ARTS (BFA) DEGREE</Typography>
+                <Typography variant='subtitle1' className={classes.timelineSubtitleRight}>Contemporary Sculpture & Printmaking, University of Oklahoma, Norman, OK</Typography>
+                <Typography variant='subtitle2' className={classes.timelineSubtitleRight}>2009-2014</Typography>
+                <Typography variant='body2' className={classes.timelineInfoRight}>In my time at the University of Oklahoma I won the Oscar Jacobson Award, the T.G. Mays Purchase Award, as well as written about in various newspapers chronicalling my artistic career and works.</Typography>
+            </div>
+          </li>
+      </ul>
+    </div>
+<div className="timeline-wrap">
+   <ul className="timeline">
+      <li className="era">
+            <Typography variant='h4' className="era__title">Experience</Typography>
+      </li>
+      <li className="entry entry--left">
+      <div className="entry__content">
+                <Typography variant='h4' className={classes.timelineTitleLeft}>CHIRP</Typography>
+                <Typography variant='subtitle1' className={classes.timelineSubtitleLeft}>Junior React Developer</Typography>
+                <Typography variant='subtitle2' className={classes.timelineSubtitleLeft}>March 2020 - April 2020</Typography>
+                <Typography variant='body2' className={classes.timelineInfoLeft}>I was responsible for resolving tickets pertaining to error handling using Sentry, adding Nice-To-Have functionality to their Admin Panel and Access App, and helping to elevate the user experience to a competitive level in the smart lock/home access software space.</Typography>
+            </div>
+      </li>
+      <li className="entry entry--right">
+      <div className="entry__content">
+                <Typography variant='h4' className={classes.timelineTitleRight}>WAVE ELECTRONICS</Typography>
+                <Typography variant='subtitle1' className={classes.timelineSubtitleRight}>Social Media Marketing Manager</Typography>
+                <Typography variant='subtitle2' className={classes.timelineSubtitleRight}>May 2019 - February 2020</Typography>
+                <Typography variant='body2' className={classes.timelineInfoRight}>I was responsible for planning, implementing, managing and monitoring the company's Social Media strategy in order to increase brand awareness, improve Marketing efforts and increase sales.</Typography>
+            </div>
+      </li>
+      <li className="entry entry--left">
+      <div className="entry__content">
+                <Typography variant='h4' className={classes.timelineTitleLeft}>RDA PROMART</Typography>
+                <Typography variant='subtitle1' className={classes.timelineSubtitleLeft}>Direct Sales Consultant</Typography>
+                <Typography variant='subtitle2' className={classes.timelineSubtitleLeft}>August 2018-May 2019</Typography>
+                <Typography variant='body2' className={classes.timelineInfoLeft}>I was responsible for creating customer awareness of the companies' products and services. I was also responsible for presenting the companies' products and services to potential customers and closing sales.</Typography>
+            </div>
+      </li>
+      <li className="entry entry--right">
+      <div className="entry__content">
+                <Typography variant='h4' className={classes.timelineTitleRight}>MANOCOBLUE</Typography>
+                <Typography variant='subtitle1' className={classes.timelineSubtitleRight}>Social Media Marketing Manager</Typography>
+                <Typography variant='subtitle1' className={classes.timelineSubtitleRight}>May 2017-August 2018</Typography>
+                <Typography variant='body2' className={classes.timelineInfoRight}>I was responsible for planning, implementing, managing and monitoring the company's Social Media strategy in order to increase brand awareness, improve Marketing efforts and increase sales.</Typography>
+            </div>
+      </li>
+   </ul>
+</div>
+    </div>
+{/* ------------------------------------------------------------------------------------------------ */}
+      {/* WORKS SECTION */}
+    <div className={classes.newSection} id='works'>
     <Typography className={classes.title} variant="h1">
-            RESUME
-          </Typography>
+      WORKS
+    </Typography>
+
     </div>
     </div>
   );
