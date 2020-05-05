@@ -1,4 +1,5 @@
 import { Button,
+         Container,
          Grid,
          Paper,
          Typography } from '@material-ui/core';
@@ -8,12 +9,16 @@ import LazyHero from 'react-lazy-hero';
 // import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 import Navbar from './components/navbar'
+import WorksNavbar from './components/worksNavbar'
 
 import './App.css';
 
 const useStyles = makeStyles(() => ({
   root: {
 //
+  },
+  gridItem: {
+    boxShadow: '-5px 5px 10px grey'
   },
   landingPageInfo: {
     color: 'white',
@@ -175,7 +180,7 @@ function App() {
                 </ul>
                 </Paper>
                 <Paper elevation={0}>
-                  <Button color='secondary' href='mailto:ragobash@gmail.com' size='large' target='_blank' variant='contained' style={{margin: '10px', display: 'block'}}>
+                  <Button color='secondary' href='mailto:ragobash@gmail.com' size='large' target='_blank' variant='contained' style={{margin: '10px', padding: '25px'}}>
                   <i class="fas fa-paper-plane" style={{paddingRight: '3px'}}></i> Send me a message!
                   </Button>
                 </Paper>
@@ -273,8 +278,60 @@ function App() {
     <Typography className={classes.title} variant="h1">
       WORKS
     </Typography>
-
+    <WorksNavbar />
+    <div className={classes.worksGrid} maxWidth='xl'>
+      <Container className={classes.gridContainer}>
+        <Grid container className={classes.grid} spacing={3}>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./qwiki.gif')} alt='Qwiki'/>          
+          </Grid>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./starwars.gif')} alt='Star Wars - Express'/>
+          </Grid>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./scraper.gif')} alt='Scraper'/>
+          </Grid>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./googlebooks.gif')} alt='Google Books'/>
+          </Grid>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./palindrome.gif')} alt='Palindrome'/>
+          </Grid>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./giphy.gif')} alt='Giphy'/>
+          </Grid>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./pokemon.gif')} alt='Pokemon'/>
+          </Grid>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./trivia.gif')} alt='Trivia'/>
+          </Grid>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./colors.gif')} alt='Colors'/>
+          </Grid>
+          <Grid item xs>
+          <img className={classes.gridItem} src={require('./clickygame.gif')} alt='Clicky Game'/>
+          </Grid>
+        </Grid>
+      </Container>
     </div>
+    </div>
+{/* ------------------------------------------------------------------------------------------------ */}
+      {/* CONTACT SECTION */}
+      <div id='contact' style={{backgroundColor: '#222222', minHeight: '50vh'}}>
+        <Typography className={classes.titleWhite} variant="h1">
+          GET IN TOUCH
+        </Typography>
+        <Button color='secondary' href='mailto:ragobash@gmail.com' size='large' target='_blank' variant='contained' style={{margin: '10px', padding: '25px'}}>
+          <i class="fas fa-paper-plane" style={{paddingRight: '3px'}}></i> Send me a message!
+        </Button>
+        <br />
+        <div style={{paddingTop: '10%'}}>
+        <Typography variant='caption' style={{color: 'white'}}>
+          © Ryan Harris 2020. All rights reserved.
+        </Typography>
+        </div>
+      </div>
     </div>
   );
 }
