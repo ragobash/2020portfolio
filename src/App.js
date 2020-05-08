@@ -1,15 +1,15 @@
 import { Button,
-         Container,
-         Grid,
-         Paper,
-         Typography } from '@material-ui/core';
+  Container,
+  Grid,
+  Paper,
+  Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import LazyHero from 'react-lazy-hero';
-// import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 import Navbar from './components/navbar'
-import WorksNavbar from './components/worksNavbar'
+// import WorksNavbar from './components/worksNavbar'
+// import Works from './pages/works/Works'
 
 import './App.css';
 
@@ -17,8 +17,20 @@ const useStyles = makeStyles(() => ({
   root: {
 //
   },
+  gridButton: {
+    background: '#03b6fc',
+    margin: '5px',
+    color: 'white',
+    fontWeight: 'bold',
+  },
   gridItem: {
     boxShadow: '-5px 5px 10px grey'
+  },
+  gridItemTitle: {
+    color: '#03b6fc',
+    fontFamily: 'Exo, sans-serif',
+    fontWeight: 'bold',
+    paddingBottom: '5px',
   },
   landingPageInfo: {
     color: 'white',
@@ -37,6 +49,7 @@ const useStyles = makeStyles(() => ({
   newSection: {
     minHeight: '100vh',
     color: 'black',
+    marginBottom: '10px'
   },
   title: {
     fontFamily: 'Vollkorn SC, serif',
@@ -90,10 +103,15 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-
 // Start Main Page Code
 function App() {
   const classes= useStyles();
+  function changeBackground(e) {
+    e.target.style.background = 'black';
+  };
+  function changeBackgroundBack(e) {
+    e.target.style.background = '#03b6fc';
+  };
 
   return (
     <div className='App'>
@@ -136,7 +154,7 @@ function App() {
             </div>
             <div class="scroll-downs">
               <div class="mousey">
-               <div class="scroller"></div>
+              <div class="scroller"></div>
               </div>
             </div>
           </div>
@@ -146,7 +164,7 @@ function App() {
       {/* ABOUT SECTION */}
       <div className={classes.newSection} id='about'>
         <Navbar />
-          <Typography className={classes.title} variant="h1">
+            <Typography className={classes.title} variant="h1">
             ABOUT ME
           </Typography>
           <Grid
@@ -201,8 +219,7 @@ function App() {
             </Grid>
             <Grid item={1}></Grid>
             </Grid>
-      </div>
-
+        </div>
 {/* ------------------------------------------------------------------------------------------------ */}
       {/* RESUME SECTION */}
     <div className={classes.newSection} id='resume' style={{backgroundColor: '#222222'}}>
@@ -233,7 +250,7 @@ function App() {
       </ul>
     </div>
 <div className="timeline-wrap">
-   <ul className="timeline">
+  <ul className="timeline">
       <li className="era">
             <Typography variant='h4' className="era__title">Experience</Typography>
       </li>
@@ -269,48 +286,217 @@ function App() {
                 <Typography variant='body2' className={classes.timelineInfoRight}>I was responsible for planning, implementing, managing and monitoring the company's Social Media strategy in order to increase brand awareness, improve Marketing efforts and increase sales.</Typography>
             </div>
       </li>
-   </ul>
+  </ul>
 </div>
     </div>
 {/* ------------------------------------------------------------------------------------------------ */}
       {/* WORKS SECTION */}
-    <div className={classes.newSection} id='works'>
+      <div className={classes.newSection} id='works'>
     <Typography className={classes.title} variant="h1">
       WORKS
     </Typography>
-    <WorksNavbar />
+    {/* <WorksNavbar /> */}
     <div className={classes.worksGrid} maxWidth='xl'>
       <Container className={classes.gridContainer}>
         <Grid container className={classes.grid} spacing={3}>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./qwiki.gif')} alt='Qwiki'/>          
+          <Grid item xs style={{display: 'inline'}}>
+            <Typography className={classes.gridItemTitle} variant='h5'>Qwiki</Typography>
+            <img className={classes.gridItem} src={require('./qwiki.gif')} alt='Qwiki'/><br />
+              <Button
+                className={classes.gridButton}
+                href='https://protected-forest-42016.herokuapp.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Deployed
+              </Button>
+              <Button
+                className={classes.gridButton}
+                href='https://github.com/ragobash/qwiki'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Github
+              </Button>
           </Grid>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./starwars.gif')} alt='Star Wars - Express'/>
+          <Grid item xs style={{display: 'inline'}}>
+          <Typography className={classes.gridItemTitle} variant='h5'>Palindrome Tester</Typography>
+            <img className={classes.gridItem} src={require('./palindrome.gif')} alt='Palindrome'/><br />
+              <Button
+                className={classes.gridButton}
+                href='https://ragobash.github.io/palindrome/'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Deployed
+              </Button>
+              <Button
+                className={classes.gridButton}
+                href='https://github.com/ragobash/palindrome'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Github
+              </Button>
           </Grid>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./scraper.gif')} alt='Scraper'/>
+          <Grid item xs style={{display: 'inline'}}>
+          <Typography className={classes.gridItemTitle} variant='h5'>Clicky Game</Typography>
+            <img className={classes.gridItem} src={require('./clickygame.gif')} alt='Clicky Game'/><br />
+              <Button
+                className={classes.gridButton}
+                href='https://ragobash.github.io/clicky-game/'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Deployed
+              </Button>
+              <Button
+                className={classes.gridButton}
+                href='https://github.com/ragobash/clicky-game'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Github
+              </Button>
           </Grid>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./googlebooks.gif')} alt='Google Books'/>
+          <Grid item xs style={{display: 'inline'}}>
+          <Typography className={classes.gridItemTitle} variant='h5'>Giphy</Typography>
+            <img className={classes.gridItem} src={require('./giphy.gif')} alt='Giphy'/><br />
+              <Button
+                className={classes.gridButton}
+                href='https://ragobash.github.io/giphy/'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Deployed
+              </Button>
+              <Button
+                className={classes.gridButton}
+                href='https://github.com/ragobash/giphy'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Github
+              </Button>
           </Grid>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./palindrome.gif')} alt='Palindrome'/>
+          <Grid item xs style={{display: 'inline'}}>
+          <Typography className={classes.gridItemTitle} variant='h5'>Codesign Web Apps</Typography>
+            <img className={classes.gridItem} src={require('./codesign.gif')} alt='Codesign'/><br />
+              <Button
+                className={classes.gridButton}
+                disabled='true'
+                href='#'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Not Deployed
+              </Button>
+              <Button
+                className={classes.gridButton}
+                href='#'
+                target='https://github.com/codesign-webapps/codesign-zone'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Github
+              </Button>
           </Grid>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./giphy.gif')} alt='Giphy'/>
+          <Grid item xs style={{display: 'inline'}}>
+          <Typography className={classes.gridItemTitle} variant='h5'>Google Books Search</Typography>
+            <img className={classes.gridItem} src={require('./googlebooks.gif')} alt='Google Books'/><br />
+              <Button
+                className={classes.gridButton}
+                href='https://sheltered-inlet-33315.herokuapp.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Deployed
+              </Button>
+              <Button
+                className={classes.gridButton}
+                href='https://github.com/ragobash/google-books-search'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Github
+              </Button>
           </Grid>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./pokemon.gif')} alt='Pokemon'/>
+          <Grid item xs style={{display: 'inline'}}>
+          <Typography className={classes.gridItemTitle} variant='h5'>Pokemon Points</Typography>
+            <img className={classes.gridItem} src={require('./pokemon.gif')} alt='Pokemon'/><br />
+              <Button
+                className={classes.gridButton}
+                href='https://ragobash.github.io/unit-4-game/'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Deployed
+              </Button>
+              <Button
+                className={classes.gridButton}
+                href='https://github.com/ragobash/unit-4-game'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Github
+              </Button>
           </Grid>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./trivia.gif')} alt='Trivia'/>
+          <Grid item xs style={{display: 'inline'}}>
+          <Typography className={classes.gridItemTitle} variant='h5'>News Scraper</Typography>
+            <img className={classes.gridItem} src={require('./scraper.gif')} alt='Scraper'/><br />
+              <Button
+                className={classes.gridButton}
+                href='https://intense-chamber-76790.herokuapp.com/articles'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Deployed
+              </Button>
+              <Button
+                className={classes.gridButton}
+                href='https://github.com/ragobash/mongo_scraper'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Github
+              </Button>
           </Grid>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./colors.gif')} alt='Colors'/>
-          </Grid>
-          <Grid item xs>
-          <img className={classes.gridItem} src={require('./clickygame.gif')} alt='Clicky Game'/>
+          <Grid item xs style={{display: 'inline'}}>
+          <Typography className={classes.gridItemTitle} variant='h5'>Colors Hangman</Typography>
+            <img className={classes.gridItem} src={require('./colors.gif')} alt='Colors'/><br />
+              <Button
+                className={classes.gridButton}
+                href='https://ragobash.github.io/word-guess-game/'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Deployed
+              </Button>
+              <Button
+                className={classes.gridButton}
+                href='https://github.com/ragobash/word-guess-game'
+                target='_blank'
+                rel='noopener noreferrer'
+                onMouseEnter={changeBackground}
+                onMouseLeave={changeBackgroundBack}>
+                Github
+              </Button>
           </Grid>
         </Grid>
       </Container>
@@ -332,7 +518,7 @@ function App() {
         </Typography>
         </div>
       </div>
-    </div>
+      </div>
   );
 }
 

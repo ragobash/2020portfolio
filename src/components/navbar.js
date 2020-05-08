@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Typography } from '@material-ui/core';
+// import { useSpring, animated } from 'react-spring';
 
 import '../App.css';
 
@@ -19,12 +20,23 @@ const useStyles = makeStyles({
     fontWeight: 'bold',
     margin: '10px',
     color: 'black',
-    textDecorationLine: 'underline',   
+    textDecorationLine: 'underline',
   },
 });
 
-export default function Navbar() {
-  const classes = useStyles();
+const Navbar = () => {
+  // const classes = useStyles();
+  // const fade = useSpring({
+  //   from: {
+  //     opacity: 0
+  //   ,to: {
+  //     opacity: 1
+  //   }
+  // }
+  // });
+
+  const classes= useStyles();
+
 
   return (
     <div className={classes.root}>
@@ -43,3 +55,5 @@ export default function Navbar() {
         </div>
   );
 }
+
+export default Navbar;
