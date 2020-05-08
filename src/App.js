@@ -13,9 +13,41 @@ import Navbar from './components/navbar'
 
 import './App.css';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   root: {
-//
+    [theme.breakpoints.between('xs', 'md')]: {
+      width: '100%',
+    },
+  },
+  aboutInfoTitle: {
+    fontFamily: 'Exo, sans-serif',
+    fontWeight: 'bold',
+    padding: '15px',
+    textAlign: 'left',
+    [theme.breakpoints.between('xs', 'md')]: {
+      textAlign: 'center',
+      padding: '5px',
+      textDecoration: 'underline'
+    },
+  },
+  aboutInfo: {
+    fontFamily: 'Exo, sans-serif',
+    margin: '15px',
+    textAlign: 'left',
+    [theme.breakpoints.between('xs', 'md')]: {
+      textAlign: 'center',
+      padding: '5px',
+    },
+  },
+  checkmarkList: {
+  [theme.breakpoints.between('xs', 'md')]: {
+    display: 'none',
+  },
+  },
+  desktop: {
+    [theme.breakpoints.between('xs', 'md')]: {
+      display: 'none'
+    },
   },
   gridButton: {
     background: '#03b6fc',
@@ -32,51 +64,85 @@ const useStyles = makeStyles(() => ({
     fontWeight: 'bold',
     paddingBottom: '5px',
   },
+  icons: {
+    padding: '15px',
+  },
   landingPageInfo: {
     color: 'white',
   },
   landingPageInfoBold: {
     fontFamily: 'Vollkorn SC, serif',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    [theme.breakpoints.between('xs', 'md')]: {
+      fontSize: '50px'
+    },
+  },
+  landingPageInfoWelcome: {
+    fontFamily: 'Vollkorn SC, serif',
+    fontWeight: 'bold',
+    [theme.breakpoints.between('xs', 'md')]: {
+      fontSize: '20px',
+      padding: '0px 10px 0px 10px'
+    },
   },
   landingPageInfoParagraph: {
     fontFamily: 'Exo, sans-serif',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    [theme.breakpoints.between('xs', 'md')]: {
+      fontSize: '13px',
+      padding: '0px 10px 0px 10px',
+      fontWeight: 'normal',
+    },
   },
-  icons: {
-    padding: '15px',
+  mobile: {
+    [theme.breakpoints.between('lg', 'xl')]: {
+      display: 'none'
+    },
+  },
+  navbar: {
+    [theme.breakpoints.between('xs', 'md')]: {
+      display: 'none'
+    },
   },
   newSection: {
     minHeight: '100vh',
     color: 'black',
     marginBottom: '10px'
   },
+  pfp: {
+    [theme.breakpoints.between('xs', 'md')]: {
+      width: '90%',
+    },
+  },
   title: {
     fontFamily: 'Vollkorn SC, serif',
     fontWeight: 'bold',
     padding: '15px',
+    [theme.breakpoints.between('xs', 'md')]: {
+      fontSize: '50px',
+      textAlign: 'center',
+      paddingBottom: '5px',
+    },
   },
   titleWhite: {
     fontFamily: 'Vollkorn SC, serif',
     fontWeight: 'bold',
     padding: '15px',
     color: 'white',
-  },
-  aboutInfoTitle: {
-    fontFamily: 'Exo, sans-serif',
-    fontWeight: 'bold',
-    padding: '15px',
-    textAlign: 'left'
-  },
-  aboutInfo: {
-    fontFamily: 'Exo, sans-serif',
-    margin: '15px',
-    textAlign: 'left'
+    [theme.breakpoints.between('xs', 'md')]: {
+      fontSize: '50px',
+      textAlign: 'center'
+    }
   },
   timelineTitleLeft: {
     fontFamily: 'Vollkorn SC, serif',
     fontWeight: 'bold',
     textAlign: 'right',
+    [theme.breakpoints.between('xs', 'md')]: {
+      fontSize: '50px',
+      textAlign: 'center',
+      paddingBottom: '5px',
+    },
   },
   timelineSubtitleLeft: {
     fontFamily: 'Exo, sans-serif',
@@ -117,7 +183,7 @@ function App() {
     <div className='App'>
 {/* ------------------------------------------------------------------------------------------------ */}
       {/* LANDING PAGE */}
-      <div className='landingPage' id='landingPage'>
+      <div className={classes.landingPage} id='landingPage'>
       <LazyHero
         color='#000000'
         imageSrc='https://picsum.photos/id/180/2400/1600.jpg?grayscale&blur=10'
@@ -126,7 +192,7 @@ function App() {
         parallaxOffset='100'
         >
         <div className={classes.landingPageInfo}>
-            <Typography variant='h3' className={classes.landingPageInfoBold}>
+            <Typography variant='h3' className={classes.landingPageInfoWelcome}>
               Hi there. My name is Ryan Harris. I am a
             </Typography>
             <Typography variant='h1' className={classes.landingPageInfoBold} style={{color: 'yellow'}}>
@@ -188,6 +254,7 @@ function App() {
                 <br />
                 Create online marketing strategies, SEO, and social media engagement to dramatically increase page views and attract new customers.
                 </Typography>
+                <div className={classes.checkmarkList}>
                 <ul style={{display: 'flex'}}>
                   <li style={{paddingRight:'5px'}}><i class="fas fa-check fa-sm" style={{color: 'green', padding: '7px'}}></i>`Website/App Design & Development`</li>
                   <li style={{paddingRight:'5px'}}><i class="fas fa-check fa-sm" style={{color: 'green', padding: '7px'}}></i>UI/UX Design</li>
@@ -196,15 +263,11 @@ function App() {
                   <li style={{paddingRight:'5px'}}><i class="fas fa-check fa-sm" style={{color: 'green', padding: '7px'}}></i>Design</li>
                   <li style={{paddingRight:'5px'}}><i class="fas fa-check fa-sm" style={{color: 'green', padding: '7px'}}></i>Branding</li>
                 </ul>
-                </Paper>
-                <Paper elevation={0}>
-                  <Button color='secondary' href='mailto:ragobash@gmail.com' size='large' target='_blank' variant='contained' style={{margin: '10px', padding: '25px'}}>
-                  <i class="fas fa-paper-plane" style={{paddingRight: '3px'}}></i> Send me a message!
-                  </Button>
+                </div>
                 </Paper>
             </Grid>
             <Grid item xs={12} lg={4}>
-                <img src={require('./Ryan.png')} alt='Ryan Harris'/>
+                <img className={classes.pfp} src={require('./Ryan.png')} alt='Ryan Harris'/>
                 <Paper elevation={0}>
                   <Typography variant="h5">
                     Ryan Harris
@@ -216,6 +279,11 @@ function App() {
                     (713) 882-2363
                   </Typography>
                 </Paper>
+                <Paper elevation={0}>
+                  <Button color='secondary' href='mailto:ragobash@gmail.com' size='large' target='_blank' variant='contained' style={{margin: '10px', padding: '25px'}}>
+                  <i class="fas fa-paper-plane" style={{paddingRight: '3px'}}></i> Send me a message!
+                  </Button>
+                </Paper>
             </Grid>
             <Grid item={1}></Grid>
             </Grid>
@@ -226,6 +294,7 @@ function App() {
       <Typography className={classes.titleWhite} variant="h1">
         RESUME
       </Typography>
+      <div className={classes.desktop}>
     <div className="timeline-wrap">
       <ul className="timeline timeline--first">
           <li className="era">
@@ -288,6 +357,36 @@ function App() {
       </li>
   </ul>
 </div>
+</div>
+      <div className={classes.mobile} style={{color: 'white', textAlign: 'center', margin: '0px 10px 0px 10px'}}>
+        <Typography variant='h4' style={{color: '#03b6fc', fontWeight: 'bold'}}>Education</Typography><br />
+        <Typography variant='subtitle1' style={{fontWeight: 'bold', textDecoration: 'underline'}}>CERTIFICATE</Typography>
+                <Typography variant='body1' style={{}}>Full Stack Developer Certificate, University of Texas at Austin, Houston, TX</Typography>
+                <Typography variant='caption' style={{}}>24 week course in Web Development which included HTML, Git, CSS, Javascript, jQuery, APIs, AJAX, JSON, Firebase, Node JS, MYSQL, Heroku, Express, Handlebars, Sequelize ORM, MongoDB, MongoJS, Mongoose, ES6, React JS, JSX, and MERN.</Typography><br /><br />
+
+        <Typography variant='subtitle1' style={{fontWeight: 'bold', textDecoration: 'underline'}}>BACHELOR OF FINE ARTS (BFA) DEGREE</Typography>
+                <Typography variant='body1' style={{}}>Contemporary Sculpture & Printmaking, University of Oklahoma, Norman, OK</Typography>
+                <Typography variant='caption' style={{}}>In my time at the University of Oklahoma I won the Oscar Jacobson Award, the T.G. Mays Purchase Award, as well as written about in various newspapers chronicalling my artistic career and works.</Typography>
+                <hr />
+        <Typography variant='h4' style={{color: '#03b6fc', fontWeight: 'bold', marginTop:'10px'}}>Experience</Typography><br />
+        <Typography variant='subtitle1' style={{fontWeight: 'bold', textDecoration: 'underline'}}>CHIRP</Typography>
+                <Typography variant='body1' style={{}}>Junior React Developer</Typography>
+                <Typography variant='body1' style={{}}>March 2020 - April 2020</Typography>
+                <Typography variant='caption' style={{}}>I was responsible for resolving tickets pertaining to error handling using Sentry, adding Nice-To-Have functionality to their Admin Panel and Access App, and helping to elevate the user experience to a competitive level in the smart lock/home access software space.</Typography><br /><br />
+        <Typography variant='subtitle1' style={{fontWeight: 'bold', textDecoration: 'underline'}}>WAVE ELECTRONICS</Typography>
+                <Typography variant='body1' style={{}}>Social Media Marketing Manager</Typography>
+                <Typography variant='body1' style={{}}>May 2019 - February 2020</Typography>
+                <Typography variant='caption' style={{}}>I was responsible for planning, implementing, managing and monitoring the company's Social Media strategy in order to increase brand awareness, improve Marketing efforts and increase sales.</Typography><br /><br />
+        <Typography variant='subtitle1' style={{fontWeight: 'bold', textDecoration: 'underline'}}>RDA PROMART</Typography>
+                <Typography variant='body1' style={{}}>DIRECT SALES CONSULTANT</Typography>
+                <Typography variant='body1' style={{}}>August 2018-May 2019</Typography>
+                <Typography variant='caption' style={{}}>I was responsible for creating customer awareness of the companies' products and services. I was also responsible for presenting the companies' products and services to potential customers and closing sales.</Typography><br /><br />
+        <Typography variant='subtitle1' style={{fontWeight: 'bold', textDecoration: 'underline'}}>MANOCOBLUE</Typography>
+                <Typography variant='body1' style={{}}>Social Media Marketing Manager</Typography>
+                <Typography variant='body1' style={{}}>May 2017-August 2018</Typography>
+                <Typography variant='caption' style={{}}>I was responsible for planning, implementing, managing and monitoring the company's Social Media strategy in order to increase brand awareness, improve Marketing efforts and increase sales.</Typography><br /><br />
+      </div>
+
     </div>
 {/* ------------------------------------------------------------------------------------------------ */}
       {/* WORKS SECTION */}
