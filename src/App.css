@@ -4,6 +4,12 @@
   font-family: 'Exo', sans-serif;
 }
 
+@media screen and (min-width: 480px) {
+  .App {
+    width: 100%
+  }
+}
+
 ul {
   list-style: none;
 }
@@ -101,7 +107,6 @@ a:hover, a:visited, a:link, a:active {
 
 .entry--right {
   margin-left: 45%;
-  
 }
 
 .entry__content {
@@ -142,5 +147,10 @@ a:hover, a:visited, a:link, a:active {
 .entry--right:after {
   right: auto;
   left: -20px;
-  
+}
+
+@media screen and (max-width: 480px) {
+  .era__title {
+    margin-left: -140px
+  }
 }
