@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/2020portfolio/static/css/main.a4b789a6.chunk.css",
+    "main.js": "/2020portfolio/static/js/main.66541558.chunk.js",
+    "main.js.map": "/2020portfolio/static/js/main.66541558.chunk.js.map",
+    "runtime-main.js": "/2020portfolio/static/js/runtime-main.840c9c95.js",
+    "runtime-main.js.map": "/2020portfolio/static/js/runtime-main.840c9c95.js.map",
+    "static/js/2.049540fd.chunk.js": "/2020portfolio/static/js/2.049540fd.chunk.js",
+    "static/js/2.049540fd.chunk.js.map": "/2020portfolio/static/js/2.049540fd.chunk.js.map",
+    "index.html": "/2020portfolio/index.html",
+    "precache-manifest.4aa395b0374f5598ff34a6a5692b6bc0.js": "/2020portfolio/precache-manifest.4aa395b0374f5598ff34a6a5692b6bc0.js",
+    "service-worker.js": "/2020portfolio/service-worker.js",
+    "static/css/main.a4b789a6.chunk.css.map": "/2020portfolio/static/css/main.a4b789a6.chunk.css.map",
+    "static/js/2.049540fd.chunk.js.LICENSE.txt": "/2020portfolio/static/js/2.049540fd.chunk.js.LICENSE.txt",
+    "static/media/Ryan.png": "/2020portfolio/static/media/Ryan.33e72b32.png",
+    "static/media/clickygame.gif": "/2020portfolio/static/media/clickygame.c330cd16.gif",
+    "static/media/codesign.gif": "/2020portfolio/static/media/codesign.1393b5ea.gif",
+    "static/media/colors.gif": "/2020portfolio/static/media/colors.6ccd728e.gif",
+    "static/media/giphy.gif": "/2020portfolio/static/media/giphy.13afac7b.gif",
+    "static/media/googlebooks.gif": "/2020portfolio/static/media/googlebooks.191de859.gif",
+    "static/media/palindrome.gif": "/2020portfolio/static/media/palindrome.d6c3def5.gif",
+    "static/media/pokemon.gif": "/2020portfolio/static/media/pokemon.452b3b0b.gif",
+    "static/media/qwiki.gif": "/2020portfolio/static/media/qwiki.ae94aecd.gif",
+    "static/media/scraper.gif": "/2020portfolio/static/media/scraper.8d1ecc80.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.840c9c95.js",
+    "static/js/2.049540fd.chunk.js",
+    "static/css/main.a4b789a6.chunk.css",
+    "static/js/main.66541558.chunk.js"
+  ]
+}
